@@ -12,5 +12,29 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('top');
+});
+Route::get('/products', function () {
+    return view('products.search');
+});
+Route::get('/products/id', function () {
+    return view('products.detail_a_product');
+});
+Route::get('/cart', function () {
+    return view('info.cart');
+});
+Route::get('/completed', function () {
+    return view('shopping.completed');
+});
+Route::get('/orders', function () {
+    return view('shopping.order_history');
+});
+Route::get('/orders/id', function () {
+    return view('shopping.order_history_detail');
+});
+Route::get('/users', function () {
+    return view('users.users');
+});
+Route::get('/users/id/edit', function () {
+    return view('users.edit');
 });
