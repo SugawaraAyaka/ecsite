@@ -25,10 +25,12 @@ class CreateUsersTable extends Migration
             $table->string('apartments', 32)->nullable();
             $table->string('email', 128)->unique();
             $table->string('phone_number', 14);
-            $table->integer('user_classification_id')->unsigned();
+            $table->biginteger('user_classification_id')->unsigned();
             $table->string('company_name', 128)->nullable();
             $table->char('delete_flag')->length(1);
             $table->timestamps();
+
+            $table->foreign('user_classification_id')->references('id')->on('users_classifications')->onDelete('cascade');
         });
     }
 
