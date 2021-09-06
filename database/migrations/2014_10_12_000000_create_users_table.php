@@ -27,7 +27,7 @@ class CreateUsersTable extends Migration
             $table->string('phone_number', 14)->comment('電話番号');
             $table->biginteger('user_classification_id')->comment('ユーザ種別')->unsigned();
             $table->string('company_name', 128)->comment('会社名')->nullable();
-            $table->char('delete_flag')->length(1);
+            $table->char('delete_flag')->length(1)->comment('deleteフラグ');
             $table->timestamps();
 
             $table->foreign('user_classification_id')->references('id')->on('users_classifications')->onDelete('cascade');

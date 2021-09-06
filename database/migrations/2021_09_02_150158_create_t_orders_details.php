@@ -15,12 +15,12 @@ class CreateTOrdersDetails extends Migration
     {
         Schema::create('t_orders_details', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('products_id')->unsigned();
-            $table->biginteger('order_id')->unsigned();
-            $table->biginteger('shipment_status_id')->unsigned();
-            $table->integer('order_detail_number')->length(64);
-            $table->integer('order_quantity');
-            $table->timestamp('shipment_date');
+            $table->integer('products_id')->comment('商品ID')->unsigned();
+            $table->biginteger('order_id')->comment('注文ID')->unsigned();
+            $table->biginteger('shipment_status_id')->comment('発送状態')->unsigned();
+            $table->integer('order_detail_number')->length(64)->comment('注文番号');
+            $table->integer('order_quantity')->comment('注文個数');
+            $table->timestamp('shipment_date')->comment('発送日');
             $table->timestamps();
 
             $table->foreign('order_id')->references('id')->on('t_orders')->onDelete('cascade');

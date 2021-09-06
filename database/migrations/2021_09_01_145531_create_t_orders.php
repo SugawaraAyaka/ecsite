@@ -15,8 +15,8 @@ class CreateTOrders extends Migration
     {
         Schema::create('t_orders', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->biginteger('user_id')->unsigned();
-            $table->timestamp('order_date');
+            $table->biginteger('user_id')->comment('ユーザID')->unsigned();
+            $table->timestamp('order_date')->comment('注文日');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
