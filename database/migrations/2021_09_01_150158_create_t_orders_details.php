@@ -15,9 +15,9 @@ class CreateTOrdersDetails extends Migration
     {
         Schema::create('t_orders_details', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('products_id');
-            $table->integer('order_id');
-            $table->integer('shipment_status_id');
+            $table->integer('products_id')->unsigned();
+            $table->biginteger('order_id')->unsigned();
+            $table->biginteger('shipment_status_id')->unsigned();
             $table->integer('order_detail_number')->length(64);
             $table->integer('order_quantity');
             $table->timestamp('shipment_date');

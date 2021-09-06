@@ -16,7 +16,7 @@ class CreateUsersClassifications extends Migration
         Schema::create('users_classifications', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('user_classification_name', 32);
-            $table->timestamps();
+            $table->timestamps();            
         });
     }
 

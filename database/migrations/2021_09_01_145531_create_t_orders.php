@@ -15,9 +15,11 @@ class CreateTOrders extends Migration
     {
         Schema::create('t_orders', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('user_id');
+            $table->biginteger('user_id')->unsigned();
             $table->timestamp('order_date');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
