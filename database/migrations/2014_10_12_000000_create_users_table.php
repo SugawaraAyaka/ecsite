@@ -25,7 +25,7 @@ class CreateUsersTable extends Migration
             $table->string('apartments', 32)->nullable();
             $table->string('email', 128)->unique();
             $table->string('phone_number', 14);
-            $table->integer('user_classification_id');
+            $table->integer('user_classification_id')->unsigned();
             $table->string('company_name', 128)->nullable();
             $table->char('delete_flag')->length(1);
             $table->timestamps();

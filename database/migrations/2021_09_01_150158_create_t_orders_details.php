@@ -22,6 +22,8 @@ class CreateTOrdersDetails extends Migration
             $table->integer('order_quantity');
             $table->timestamp('shipment_date');
             $table->timestamps();
+
+            $table->foreign('order_id')->references('id')->on('t_orders')->onDelete('cascade');
         });
     }
 
