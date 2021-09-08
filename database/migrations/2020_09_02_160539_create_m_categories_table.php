@@ -15,7 +15,7 @@ class CreateMCategoriesTable extends Migration
     {
         Schema::create('m_categories', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('category_name');
+            $table->string('category_name')->comment('カテゴリー名');;
             $table->timestamps();
         });
     }
