@@ -15,7 +15,7 @@ class CreateMProductStatusesTable extends Migration
     {
         Schema::create('m_product_statuses', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('product_status_name')->comment('商品状態名');;
+            $table->string('product_status_name')->comment('商品状態名');
             $table->timestamps();
         });
     }

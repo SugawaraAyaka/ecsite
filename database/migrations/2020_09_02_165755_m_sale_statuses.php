@@ -15,7 +15,7 @@ class MSaleStatuses extends Migration
     {
         Schema::create('m_sale_statuses', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('sale_status_name',32)->comment('販売状態名');;
+            $table->string('sale_status_name',32)->comment('販売状態名');
             $table->timestamps();
         });
 
