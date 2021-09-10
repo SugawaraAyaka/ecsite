@@ -16,10 +16,10 @@ class DatabaseSeeder extends Seeder
         $this->call(OrdersTableSeeder::class);
         $this->call(ShipmentStatusesTableSeeder::class);
         $this->call(OrdersDetailsTableSeeder::class);
-        $this->call(CategoriedTableSeeder::class);
-        $this->call(Product_statusesTableSeeder::class);
-        $this->call(Sale_statusesTableSeeder::class);
-        $this->call(ProductTableSeeder::class);
+        $this->call(CategoriesTableSeeder::class);
+        $this->call(ProductStatusesTableSeeder::class);
+        $this->call(SaleStatusesTableSeeder::class);
+        $this->call(ProductsTableSeeder::class);
         $this->call(PurchasesTableSeeder::class);
     }
 }
