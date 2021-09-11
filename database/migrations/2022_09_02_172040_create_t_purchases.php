@@ -23,7 +23,6 @@ class CreateTPurchases extends Migration
             $table->timestamp('purchase_date')->nullable()->comment('納入日');
             $table->bigInteger('product_id')->unsigned()->comment('商品ID');
             $table->timestamps();
-
             $table->foreign('product_id')
                   ->references('id')
                   ->on('m_products')
