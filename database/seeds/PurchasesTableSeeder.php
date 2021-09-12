@@ -18,8 +18,8 @@ class PurchasesTableSeeder extends Seeder
                 'purchase_quantity' => 3,
                 'purchase_company'  => '食品会社',
                 'description'       => 'マンゴー',
-                // 'order_date'        => '2021-05-13 12:30:30',
-                // 'purchase_date'     => '2021-05-13 12:30:30',
+                'order_date'        => '2021-05-13 12:30:30',
+                'purchase_date'     => '2021-05-13 12:30:30',
                 'product_id'        => 1
             ],
             [
@@ -28,8 +28,8 @@ class PurchasesTableSeeder extends Seeder
                 'purchase_quantity' => 3,
                 'purchase_company'  => 'ファッション会社',
                 'description'       => 'ワンピース',
-                // 'order_date'        => '2021-09-05 12:30:30',
-                // 'purchas_date'      => '2021-09-05 12:30:30',
+                'order_date'        => '2021-09-05 12:30:30',
+                'purchase_date'      => '2021-09-05 12:30:30',
                 'product_id'        => 2
             ],
             [
@@ -38,8 +38,8 @@ class PurchasesTableSeeder extends Seeder
                 'purchase_quantity' => 2,
                 'purchase_company'  => 'ファッション会社',
                 'description'       => 'Tシャツ',
-                // 'order_date'        => '2021-09-05 12:30:30',
-                // 'purchas_date'      => '2021-09-05 12:30:30',
+                'order_date'        => '2021-09-05 12:30:30',
+                'purchase_date'      => '2021-09-05 12:30:30',
                 'product_id'        => 2
             ],
             [
@@ -48,8 +48,8 @@ class PurchasesTableSeeder extends Seeder
                 'purchase_quantity' => 2,
                 'purchase_company'  => '食品会社',
                 'description'       => 'バナナ',
-                // 'order_date'        => '2021-09-05 12:30:30',
-                // 'purchas_date'      => '2021-09-05 12:30:30',
+                'order_date'        => '2021-09-05 12:30:30',
+                'purchase_date'      => '2021-09-05 12:30:30',
                 'product_id'        => 1
             ],
             [
@@ -58,8 +58,8 @@ class PurchasesTableSeeder extends Seeder
                 'purchase_quantity' => 5,
                 'purchase_company'  => 'ファッション会社',
                 'description'       => 'パジャマ',
-                // 'order_date'        => '2021-09-05 12:30:30',
-                // 'purchas_date'      => '2021-09-05 12:30:30',
+                'order_date'        => '2021-09-05 12:30:30',
+                'purchase_date'      => '2021-09-05 12:30:30',
                 'product_id'        => 2
             ],
             [
@@ -68,8 +68,8 @@ class PurchasesTableSeeder extends Seeder
                 'purchase_quantity' => 3,
                 'purchase_company'  => '食品会社',
                 'description'       => '青森りんご',
-                // 'order_date'        => '2021-09-05 12:30:30',
-                // 'purchas_date'      => '2021-09-05 12:30:30',
+                'order_date'        => '2021-09-05 12:30:30',
+                'purchase_date'      => '2021-09-05 12:30:30',
                 'product_id'        => 2
             ],
             [
@@ -78,8 +78,8 @@ class PurchasesTableSeeder extends Seeder
                 'purchase_quantity' => 10,
                 'purchase_company'  => 'ファッション会社',
                 'description'       => 'ジーンズ',
-                // 'order_date'        => '2021-09-05 12:30:30',
-                // 'purchas_date'      => '2021-09-05 12:30:30',
+                'order_date'        => '2021-09-05 12:30:30',
+                'purchase_date'      => '2021-09-05 12:30:30',
                 'product_id'        => 2
             ],
             [
@@ -88,8 +88,8 @@ class PurchasesTableSeeder extends Seeder
                 'purchase_quantity' => 5,
                 'purchase_company'  => '雑貨会社',
                 'description'       => 'クッション',
-                // 'order_date'        => '2021-09-05 12:30:30',
-                // 'purchas_date'      => '2021-09-05 12:30:30',
+                'order_date'        => '2021-09-05 12:30:30',
+                'purchase_date'      => '2021-09-05 12:30:30',
                 'product_id'        => 3
             ],
             [
@@ -98,8 +98,8 @@ class PurchasesTableSeeder extends Seeder
                 'purchase_quantity' => 5,
                 'purchase_company'  => '雑貨会社',
                 'description'       => 'カーペット',
-                // 'order_date'        => '2021-09-05 12:30:30',
-                // 'purchas_date'      => '2021-09-05 12:30:30',
+                'order_date'        => '2021-09-05 12:30:30',
+                'purchase_date'      => '2021-09-05 12:30:30',
                 'product_id'        => 3
             ],
             [
@@ -108,8 +108,8 @@ class PurchasesTableSeeder extends Seeder
                 'purchase_quantity' => 5,
                 'purchase_company'  => '雑貨会社',
                 'description'       => '加湿器',
-                // 'order_date'        => '2021-09-05 12:30:30',
-                // 'purchas_date'      => '2021-09-05 12:30:30',
+                'order_date'        => '2021-09-05 12:30:30',
+                'purchase_date'      => '2021-09-05 12:30:30',
                 'product_id'        => 3
             ]
         ]);

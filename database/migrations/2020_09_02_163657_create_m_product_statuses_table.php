@@ -27,6 +27,6 @@ class CreateMProductStatusesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('m_product_status');
+        Schema::dropIfExists('m_product_statuses');
     }
 }

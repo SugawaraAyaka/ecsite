@@ -18,9 +18,7 @@ class MSaleStatuses extends Migration
             $table->string('sale_status_name',32)->comment('販売状態名');
             $table->timestamps();
         });
-
     }
-
     /**
      * Reverse the migrations.
      *
@@ -28,6 +26,6 @@ class MSaleStatuses extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('m_sale_statuses');
     }
 }
