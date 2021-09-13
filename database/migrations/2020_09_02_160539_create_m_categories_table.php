@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUsersClassifications extends Migration
+class CreateMCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateUsersClassifications extends Migration
      */
     public function up()
     {
-        Schema::create('users_classifications', function (Blueprint $table) {
+        Schema::create('m_categories', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('user_classification_name', 32)->comment('ユーザ種別名');
+            $table->string('category_name')->comment('カテゴリー名');
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ class CreateUsersClassifications extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users_classifications');
+        Schema::dropIfExists('m_categories');
     }
 }
