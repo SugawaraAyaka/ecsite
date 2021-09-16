@@ -21,7 +21,8 @@ class CreateTOrdersDetails extends Migration
             $table->integer('order_detail_number')->length(64)->comment('注文番号');
             $table->integer('order_quantity')->comment('注文個数');
             $table->timestamp('shipment_date')->comment('発送日');
-            $table->timestamps();
+            $table->timestamp('created_at')->default(\DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->default(\DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
 
             $table->foreign('order_id')->references('id')->on('t_orders')->onDelete('cascade');
             $table->foreign('shipment_status_id')->references('id')->on('m_shipment_statuses')->onDelete('cascade');
