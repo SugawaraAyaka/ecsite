@@ -10,7 +10,7 @@
         <div class="row">
             <div class="input-group mt-4 col-md-7 offset-2">
                 <h2 class="mr-4">商品名</h2>
-                <input type="text" class="form-control" name="product_name" value="">
+                <input type="text" class="form-control" name="product_name">
                 <span class="input-group-btn">
                     <button type="submit" class="btn btn-primary ml-4">検索</button>
                 </span>
@@ -43,12 +43,12 @@
         </thead>
         <tbody>
             @foreach($products as $product)
-            <td>{{ $product->product_name }}</td>
             <tr>
+            <td>{{ $product->product_name }}</td>
                 <td>{{ $product->category->category_name }}</td>
                 <td>{{ $product->price }}円</td>
-            </tr>
                 <td name="name"><a href="#" class="btn btn-primary">商品詳細</a></td>
+            </tr>
             @endforeach
         </tbody>
         </table>
