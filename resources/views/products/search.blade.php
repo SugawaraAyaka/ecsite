@@ -7,6 +7,7 @@
         </div>
     </div>
     <form method="get" action="{{ route('search.products') }}">
+        @csrf
         <div class="row">
             <div class="input-group mt-4 col-md-7 offset-2">
                 <h2 class="mr-4">商品名</h2>
@@ -21,9 +22,9 @@
                 <h2>商品カテゴリ</h2>
                 <select name="category_id" class="ml-2" style="width:50%; text-align-last:center;">
                     <option value="">未選択</option>
-                    @foreach($categories as $id => $category_name)
-                    <option value="{{ $id }}">
-                        {{ $category_name }}
+                    @foreach($categories as $categoryid => $categoryName)
+                    <option value="{{ $categoryid }}">
+                        {{ $categoryName }}
                     </option>
                     @endforeach
                 </select>
@@ -45,7 +46,7 @@
             @foreach($products as $product)
             <tr>
                 <td>{{ $product->product_name }}</td>
-                <td>{{ $product->category->category_name }}</td>
+                <td>{{ $product->category->categoryName }}</td>
                 <td>{{ $product->price }}円</td>
                 <td name="name"><a href="#" class="btn btn-primary">商品詳細</a></td>
             </tr>
