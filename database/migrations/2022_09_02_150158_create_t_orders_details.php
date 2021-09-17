@@ -15,7 +15,7 @@ class CreateTOrdersDetails extends Migration
     {
         Schema::create('t_orders_details', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('products_id')->comment('商品ID')->unsigned();
+            $table->biginteger('products_id')->comment('商品ID')->unsigned();
             $table->biginteger('order_id')->comment('注文ID')->unsigned();
             $table->biginteger('shipment_status_id')->comment('発送状態')->unsigned();
             $table->integer('order_detail_number')->length(64)->comment('注文番号');
@@ -24,6 +24,7 @@ class CreateTOrdersDetails extends Migration
             $table->timestamp('created_at')->default(\DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(\DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
 
+            $table->foreign('products_id')->references('id')->on('m_products')->onDelete('cascade');
             $table->foreign('order_id')->references('id')->on('t_orders')->onDelete('cascade');
             $table->foreign('shipment_status_id')->references('id')->on('m_shipment_statuses')->onDelete('cascade');
         });
