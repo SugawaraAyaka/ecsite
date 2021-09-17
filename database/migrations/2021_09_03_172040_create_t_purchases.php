@@ -22,7 +22,9 @@ class CreateTPurchases extends Migration
             $table->timestamp('order_date')->comment('発送日');
             $table->timestamp('purchase_date')->nullable()->comment('納入日');
             $table->bigInteger('product_id')->unsigned()->comment('商品ID');
-            $table->timestamps();
+            $table->timestamp('created_at')->default(\DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->default(\DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));     
+            
             $table->foreign('product_id')
                   ->references('id')
                   ->on('m_products')

@@ -23,18 +23,20 @@ class CreateMProductsTable extends Migration
             $table->bigInteger('product_status_id')->unsigned()->comment('商品状態');
             $table->timestamp('regist_date')->nullable()->comment('商品登録日');
             $table->bigInteger('user_id')->unsigned()->comment('ユーザーID');
+            $table->timestamp('created_at')->default(\DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->default(\DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));     
 
             $table->foreign('category_id')
                 ->references('id')
                 ->on('m_categories')
                 ->onDelete('cascade');
-            $table->foreign('product_status_id')
-                ->references('id')
-                ->on('m_product_statuses')
-                ->onDelete('cascade');
             $table->foreign('sale_status_id')
                 ->references('id')
                 ->on('m_sale_statuses')
+                ->onDelete('cascade');
+            $table->foreign('product_status_id')
+                ->references('id')
+                ->on('m_product_statuses')
                 ->onDelete('cascade');
             $table->foreign('user_id')
                 ->references('id')

@@ -17,22 +17,23 @@
                 </tr>
             </thead>
             <tbody>
+                @foreach ($orders as $order)
                 <tr>
-                    <td>xxxx</td>
-                    <td>xxxxxx</td>
+                    <td>{{ $order->id }}</td>
+                    <td>{{ $order->orderDetail->order_detail_number }}</td>
                     <td>
-                        <p>〒xxx-xxxx</p>
-                        <p>xxxxx&nbsp;xxxxx</p>
-                        <p>xxx&nbsp;xxxx  様</p>
+                        <p>〒{{ $order->user->zipcode }}</p>
+                        <p>{{ $order->user->prefecture }}{{ $order->user->municipality }}{{ $order->user->address }}{{ $order->user->apartments }}</p>
                     </td>
                     <td>
-                        <p>注文日時: xxxx</p>
-                        <p>注文状態：発送済</p>
-                    </td>
+                        <p>注文日時：{{ $order->order_date }}</p>
+                        <p>注文状態：{{ $order->orderDetail->shipment_status_id }}</p>
+                    </td> 
                     <td>
                         <a class="btn btn-primary" href="#">詳細</a>
                     </td>
                 </tr>
+                @endforeach
             </tbody>
         </table>
     </div>

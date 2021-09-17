@@ -28,7 +28,8 @@ class CreateUsersTable extends Migration
             $table->biginteger('user_classification_id')->comment('ユーザ種別')->unsigned();
             $table->string('company_name', 128)->comment('会社名')->nullable();
             $table->char('delete_flag')->length(1)->comment('deleteフラグ');
-            $table->timestamps();
+            $table->timestamp('created_at')->default(\DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->default(\DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
 
             $table->foreign('user_classification_id')->references('id')->on('users_classifications')->onDelete('cascade');
         });

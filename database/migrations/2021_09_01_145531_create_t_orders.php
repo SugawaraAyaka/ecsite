@@ -17,7 +17,8 @@ class CreateTOrders extends Migration
             $table->bigIncrements('id');
             $table->biginteger('user_id')->comment('ユーザID')->unsigned();
             $table->timestamp('order_date')->comment('注文日');
-            $table->timestamps();
+            $table->timestamp('created_at')->default(\DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->default(\DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
