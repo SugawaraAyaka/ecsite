@@ -48,7 +48,7 @@
                 <td>{{ $product->product_name }}</td>
                 <td>{{ $product->category->categoryName }}</td>
                 <td>{{ $product->price }}円</td>
-                <td name="name"><a href="#" class="btn btn-primary">商品詳細</a></td>
+                <td name="name"><a href="products/{{ $product->id }}" class="btn btn-primary">商品詳細</a></td>
             </tr>
             @endforeach
         </tbody>

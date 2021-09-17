@@ -31,4 +31,10 @@ class ProductsController extends Controller
             'categoryId' => $categoryId,
         ]);
     }
+    public function showDetail($id)
+    {
+        $product = Product::findOrFail($id);
+        return view('products.detail_a_product',compact('product'));
+    }
 }
+

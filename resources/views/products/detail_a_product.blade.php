@@ -8,13 +8,13 @@
             <h1>商品情報</h1>
         </div>
         <div class="col-lg-12 mt-4">
-            <h2>xxxxxxxx</h2>
+            <h2>{{ $product->product_name }}</h2>
         </div>
     </div>
     <!-- カテゴリの名前・商品説明 -->
     <div class="row text-right">
         <div class="col-lg-12">
-            <h2>商品カテゴリ：xxxxxxx</h2>
+            <h2>商品カテゴリ：{{ $product->category->id }}</h2>
         </div>
     </div>
     <div class="row text-left">
@@ -22,10 +22,10 @@
             <h2>商品説明</h2>
         </div>
         <div class="col-lg-12 mt-3">
-            <h2>xxxxxxxxxxxxx</h2>
+            <h2>{{ $product->description }}</h2>
         </div>
         <div class="col-lg-12 mt-3">
-            <h2>価格：xxx,xxx円</h2>
+            <h2>価格：{{ $product->price }}円</h2>
         </div>
     </div>
 
