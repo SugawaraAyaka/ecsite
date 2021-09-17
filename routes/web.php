@@ -14,9 +14,8 @@
 Route::get('/', function () {
     return view('top');
 });
-Route::get('/products', function () {
-    return view('products.search');
-});
+Route::get('/products','ProductsController@search')->name('search.products');
+
 Route::get('/products/id', function () {
     return view('products.detail_a_product');
 });
