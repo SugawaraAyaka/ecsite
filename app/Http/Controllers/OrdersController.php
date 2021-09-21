@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Order;
 use App\OrderDetail;
 use App\User;
@@ -29,5 +30,27 @@ class OrdersController extends Controller
         ->orderBy('updated_at', 'desc')
         ->paginate(15);
         return view('shopping.order_history', ['orders' => $orders]);
+    }
+
+    public function detail($id)
+    {
+        $orders = Order::findOrFail($id);
+        $details = $orders->orderDetail;
+        foreach($details as $detail){
+            $productId = $detail->products_id;
+            $orderQuantity = $detail->order_quantity;
+            $orderDetailNumber = $detail->order_detail_number;
+        }
+
+        $orderDetails = OrderDetail::with('product')->get();
+        $totalPrice = 0;
+        foreach($orderDetails as $orderDetail){
+            $price = $orderDetail->product['price'];
+            $orderQuantity = $orderDetail->product['order_quantity'];
+            $total = $price * $orderQuantity;
+            $totalPrice += $total;
+        }
+        $user = $orders->user;
+        return view('shopping.order_history_detail', compact('user','details', 'orderDetails', 'totalPrice'));
     }
 }

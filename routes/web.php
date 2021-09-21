@@ -29,9 +29,8 @@ Route::get('/completed', function () {
 //     Route::get('/orders', 'OrdersController@index')->name('order_history');
 //  });
 Route::get('/orders', 'OrdersController@index')->name('order_history');
-// Route::get('/orders/id', function () {
-//     return view('shopping.order_history_detail');
-// });
+Route::get('/orders/{id}','OrdersController@detail')->name('order_history_detail');
+
 Route::get('/users', function () {
     return view('users.users');
 });

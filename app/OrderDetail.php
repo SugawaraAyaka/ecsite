@@ -16,10 +16,10 @@ class OrderDetail extends Model
         'shipment_date',
     ];
 
-    // public function mproduct()
-    // {
-    //     return $this->belongsTo(Mproduct::class);
-    // }
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
+    }
 
     public function shipmentStatus()
     {
