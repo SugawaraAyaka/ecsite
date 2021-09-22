@@ -14,10 +14,9 @@
 Route::get('/', function () {
     return view('top');
 });
-Route::get('/products','ProductsController@search')->name('search.products');
-
-Route::get('/products/id', function () {
-    return view('products.detail_a_product');
+Route::prefix('products')->group(function (){
+    Route::get('/', 'ProductsController@search')->name('search.products');
+    Route::get('/{id}', 'ProductsController@showDetail')->name('search.detail');
 });
 Route::get('/cart', function () {
     return view('info.cart');

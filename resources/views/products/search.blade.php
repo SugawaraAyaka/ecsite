@@ -46,9 +46,9 @@
             @foreach($products as $product)
             <tr>
                 <td>{{ $product->product_name }}</td>
-                <td>{{ $product->category->categoryName }}</td>
+                <td>{{ $product->category->category_name }}</td>
                 <td>{{ $product->price }}円</td>
-                <td name="name"><a href="#" class="btn btn-primary">商品詳細</a></td>
+                <td name="name"><a href="{{ route('search.detail',$product->id) }}" class="btn btn-primary">商品詳細</a></td>
             </tr>
             @endforeach
         </tbody>
