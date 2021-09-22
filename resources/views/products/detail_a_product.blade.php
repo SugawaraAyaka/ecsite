@@ -14,7 +14,7 @@
     <!-- カテゴリの名前・商品説明 -->
     <div class="row text-right">
         <div class="col-lg-12">
-            <h2>商品カテゴリ：{{ $product->category->id }}</h2>
+            <h2>商品カテゴリ：{{ $product->category->category_name }}</h2>
         </div>
     </div>
     <div class="row text-left">
