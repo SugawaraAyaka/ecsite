@@ -30,7 +30,7 @@
                         <p>注文状態：{{ $order->orderDetail->shipment_status_id }}</p>
                     </td> 
                     <td>
-                        <a class="btn btn-primary" href="#">詳細</a>
+                        <a class="btn btn-primary" href="#"">詳細</a>
                     </td>
                 </tr>
                 @endforeach

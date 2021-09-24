@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\OrderDetail;
+use App\User;
 use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
