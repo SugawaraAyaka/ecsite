@@ -44,7 +44,7 @@
                         </p>
                     </td> 
                     <td>
-                        <a class="btn btn-primary" href="{{ route('order_history_detail',$order->id) }}""">詳細</a>
+                        <a class="btn btn-primary" href="{{ route('order_history_detail',$order->id) }}">詳細</a>
                     </td>
                 </tr>
                 @endforeach
