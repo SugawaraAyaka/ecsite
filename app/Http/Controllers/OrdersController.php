@@ -42,7 +42,9 @@ class OrdersController extends Controller
             $orderDetailNumber = $detail->order_detail_number;
         }
 
-        $orderDetails = OrderDetail::with('products')->get();
+        $orderDetails = OrderDetail::with('products')
+        ->where('order_id', 1)
+        ->get();
         $totalPrice = 0;
         foreach($orderDetails as $orderDetail){
             $price = $orderDetail->product['price'];
