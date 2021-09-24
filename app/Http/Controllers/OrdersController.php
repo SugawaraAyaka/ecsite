@@ -43,7 +43,7 @@ class OrdersController extends Controller
         }
 
         $orderDetails = OrderDetail::with('products')
-        ->where('order_id', 1)
+        ->where('order_id', $id)
         ->get();
         $totalPrice = 0;
         foreach($orderDetails as $orderDetail){
