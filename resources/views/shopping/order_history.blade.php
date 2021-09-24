@@ -20,17 +20,31 @@
                 @foreach ($orders as $order)
                 <tr>
                     <td>{{ $order->id }}</td>
-                    <td>{{ $order->orderDetail->order_detail_number }}</td>
+                    <td>
+                    @foreach($order->orderDetail as $orderDetail)
+                    {{ $orderDetail->order_detail_number }}
+                    @endforeach
+                    </td>
                     <td>
                         <p>〒{{ $order->user->zipcode }}</p>
                         <p>{{ $order->user->prefecture }}{{ $order->user->municipality }}{{ $order->user->address }}{{ $order->user->apartments }}</p>
                     </td>
                     <td>
                         <p>注文日時：{{ $order->order_date }}</p>
-                        <p>注文状態：{{ $order->orderDetail->shipment_status_id }}</p>
+                        <p>
+                        @foreach($order->orderDetail as $orderDetail)
+                        @if ($orderDetail->shipment_status_id === config('const.shipment_status_id.readyToShip'))
+                        発送準備中
+                        @elseif ($orderDetail->shipment_status_id === config('const.shipment_status_id.shippingCompleted'))
+                        発送完了
+                        @else
+                        発送前
+                        @endif
+                        @endforeach
+                        </p>
                     </td> 
                     <td>
-                        <a class="btn btn-primary" href="#"">詳細</a>
+                        <a class="btn btn-primary" href="{{ route('order_history_detail',$order->id) }}""">詳細</a>
                     </td>
                 </tr>
                 @endforeach
