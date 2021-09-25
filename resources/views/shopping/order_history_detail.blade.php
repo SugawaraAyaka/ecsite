@@ -72,7 +72,7 @@
     </table>
     @endif
     <div class="text-right px-3 my-3">
-        <a href="#" class="btn btn-primary">注文履歴に戻る</a>
+        <a href="{{ route('order_history') }}" class="btn btn-primary">注文履歴に戻る</a>
     </div>
 </div>
 @endsection
