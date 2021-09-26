@@ -31,9 +31,10 @@ Route::get('/orders', 'OrdersController@index')->name('order_history');
 // Route::get('/orders/id', function () {
 //     return view('shopping.order_history_detail');
 // });
-Route::get('/users', function () {
-    return view('users.users');
+
+Route::prefix('users')->name('users.')->group(function (){
+    Route::get('/{id}/edit', 'UsersController@edit')->name('edit');
+    Route::put('/{id}/update', 'UsersController@update')->name('update');
+    Route::delete('/{id}/delete', 'UsersController@delete')->name('delete');
 });
-Route::get('/users/id/edit', function () {
-    return view('users.edit');
-});
+
