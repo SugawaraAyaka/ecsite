@@ -7,7 +7,7 @@
     </div>
 
     <div class="text-center">
-        <p class="mt-4">ご購入ありがとうございます！<br>注文番号：xxxxxxxx</p>
+        <p class="mt-4">ご購入ありがとうございます！<br>注文番号：00000000{{ $orderDetail->order_detail_number }}</p>
     </div>
 
     <div class="text-center">
