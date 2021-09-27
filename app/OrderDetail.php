@@ -2,6 +2,9 @@
 
 namespace App;
 
+use App\Order;
+use App\Product;
+use App\ShipmentStatus;
 use Illuminate\Database\Eloquent\Model;
 
 class OrderDetail extends Model
@@ -16,10 +19,10 @@ class OrderDetail extends Model
         'shipment_date',
     ];
 
-    // public function mproduct()
-    // {
-    //     return $this->belongsTo(Mproduct::class);
-    // }
+    public function products()
+    {
+        return $this->belongsTo(Product::class);
+    }
 
     public function shipmentStatus()
     {
