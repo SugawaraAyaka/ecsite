@@ -28,6 +28,7 @@ Route::get('/completed', function () {
 //     Route::get('/orders', 'OrdersController@index')->name('order_history');
 //  });
 Route::get('/orders', 'OrdersController@index')->name('order_history');
+Route::post('/orders/completed/{id}', 'OrdersController@store')->name('order_completed');
 // Route::get('/orders/id', function () {
 //     return view('shopping.order_history_detail');
 // });

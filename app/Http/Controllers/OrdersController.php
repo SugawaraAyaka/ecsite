@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Order;
 use App\OrderDetail;
+use App\Product;
 use App\User;
 use Carbon\Carbon;
 
@@ -30,4 +31,23 @@ class OrdersController extends Controller
         ->paginate(15);
         return view('shopping.order_history', ['orders' => $orders]);
     }
-}
+    
+    public function store(Request $request)
+    {
+        $carbon = new Carbon();
+        $now = $carbon->now();
+        $order = new Order;
+        $order->user_id = ;
+        $order->order_date = $now;
+        $order->save();
+
+        $orderDetail = new OrderDetail;
+        $orderDetail->products_id = $request->id;
+        $orderDetail->order_id = $order->id;
+        $orderDetail->shipment_status_id = 1;
+        $orderDetail->order_detail_number = 123456789;
+        $orderDetail->order_quantity = $request->input('quantity');
+        $orderDetail->shipment_date = 20210902;
+        $orderDetail->save();
+        return view('shopping.completed', ['orderDetail' => $orderDetail]);
+    }
