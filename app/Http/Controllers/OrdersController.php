@@ -46,9 +46,10 @@ class OrdersController extends Controller
         $orderDetail->products_id = $request->id;
         $orderDetail->order_id = $order->id;
         $orderDetail->shipment_status_id = 1;
-        // $orderDetail->order_detail_number = int rand([000000001, 999999999]);
+        $orderDetail->order_detail_number = OrderDetail::max('order_detail_number') + 1;
         $orderDetail->order_quantity = $request->input('quantity');
-        $orderDetail->shipment_date = 20210902;
+        $orderDetail->shipment_date = 20210903;
         $orderDetail->save();
         return view('shopping.completed', ['orderDetail' => $orderDetail]);
     }
+}
