@@ -31,13 +31,14 @@ class OrdersController extends Controller
         ->paginate(15);
         return view('shopping.order_history', ['orders' => $orders]);
     }
-    
+
     public function store(Request $request)
     {
         $carbon = new Carbon();
         $now = $carbon->now();
         $order = new Order;
-        $order->user_id = ;
+        // TODO: ユーザ認証の機能が完成後に、user_idを埋め込み可能
+        $order->user_id = 1;
         $order->order_date = $now;
         $order->save();
 
@@ -45,7 +46,7 @@ class OrdersController extends Controller
         $orderDetail->products_id = $request->id;
         $orderDetail->order_id = $order->id;
         $orderDetail->shipment_status_id = 1;
-        $orderDetail->order_detail_number = 123456789;
+        // $orderDetail->order_detail_number = int rand([000000001, 999999999]);
         $orderDetail->order_quantity = $request->input('quantity');
         $orderDetail->shipment_date = 20210902;
         $orderDetail->save();
