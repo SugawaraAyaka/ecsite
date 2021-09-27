@@ -37,8 +37,6 @@ class UserRequest extends FormRequest
             'apartments'   => 'max:10',
             'phone_number' => 'required|integer:max:20',
         ];
-
-
     }
 
     public function attributes()
