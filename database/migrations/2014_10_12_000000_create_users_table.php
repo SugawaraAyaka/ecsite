@@ -24,7 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('address', 32)->comment('番地');
             $table->string('apartments', 32)->comment('マンション、部屋番号')->nullable();
             $table->string('email', 128)->unique()->comment('メールアドレス');
-            $table->bigInteger('phone_number')->comment('電話番号')->unsigned();
+            $table->bigInteger('phone_number')->comment('電話番号');
             $table->bigInteger('user_classification_id')->comment('ユーザ種別')->unsigned();
             $table->string('company_name', 128)->comment('会社名')->nullable();
             $table->char('delete_flag')->length(1)->comment('deleteフラグ');

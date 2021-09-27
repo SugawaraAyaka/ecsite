@@ -2,8 +2,6 @@
 
 namespace App\Http\Requests;
 
-use App\User;
-use Illuminate\Http\Request;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Validator;
 
@@ -32,9 +30,10 @@ class UserRequest extends FormRequest
             'last_name'    => 'required|max:10',
             'first_name'   => 'required|max:10',
             'email'        => 'required|email',
-            'zipcode'      => 'required|integer:max:7',
+            'zipcode'      => 'required|integer|digits:7',
             'prefecture'   => 'required|max:5',
             'municipality' => 'required|max:10',
+            'address'      => 'required|max:15',
             'apartments'   => 'max:10',
             'phone_number' => 'required|integer:max:20',
         ];
@@ -51,6 +50,7 @@ class UserRequest extends FormRequest
             'zipcode'      => '郵便番号',
             'prefecture'   => '都道府県',
             'municipality' => '市町村',
+            'address'      => '番地',
             'apartments'   => 'マンション部屋番号',
             'phone_number' => '電話番号',
         ];

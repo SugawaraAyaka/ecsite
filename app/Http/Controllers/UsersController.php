@@ -25,6 +25,7 @@ class UsersController extends Controller
         $user->zipcode      = $request->input('zipcode');
         $user->prefecture   = $request->input('prefecture');
         $user->municipality = $request->input('municipality');
+        $user->address      = $request->input('address');
         $user->apartments   = $request->input('apartments');
         $user->phone_number = $request->input('phone_number');
         $user->save();
