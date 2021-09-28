@@ -41,9 +41,3 @@ Route::prefix('orders')->group(function (){
     Route::get('/', 'OrdersController@index')->name('order_history');
     Route::get('/{id}','OrdersController@detail')->name('order_history_detail');
 });
-Route::get('/users', function () {
-    return view('users.users');
-});
-Route::get('/users/id/edit', function () {
-    return view('users.edit');
-});
