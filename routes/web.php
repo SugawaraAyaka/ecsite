@@ -27,8 +27,7 @@ Route::get('/completed', function () {
 // Route::middleware('auth')->group(function () {
 //     Route::get('/orders', 'OrdersController@index')->name('order_history');
 //  });
-Route::get('/orders', 'OrdersController@index')->name('order_history');
-Route::post('/orders/completed/{id}', 'OrdersController@store')->name('order_completed');
+
 // Route::get('/orders/id', function () {
 //     return view('shopping.order_history_detail');
 // });
@@ -36,9 +35,8 @@ Route::post('/orders/completed/{id}', 'OrdersController@store')->name('order_com
 Route::prefix('orders')->group(function (){
     Route::get('/', 'OrdersController@index')->name('order_history');
     Route::get('/{id}','OrdersController@detail')->name('order_history_detail');
+    Route::post('/completed/{id}', 'OrdersController@store')->name('order_completed');
 });
-
-
 Route::get('/users', function () {
     return view('users.users');
 });
