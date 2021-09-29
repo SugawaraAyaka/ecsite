@@ -6,7 +6,7 @@
         @if (Auth::check())
             <p class="text-center offset-9 pt-1">{{ Auth::user()->last_name}}さん</p>
             <li class="nav-item list-inline-item">
-                <a href="#" class="nav-link">商品検索</a>
+                <a href="{{ route('search.products') }}" class="nav-link">商品検索</a>
             </li>
             <li class="nav-item list-inline-item">
                 <a href="#" class="nav-link">カート</a>
@@ -18,15 +18,15 @@
                 <a href="#" class="nav-link">ユーザー情報</a>
             </li>
             <li class="nav-item list-inline-item">
-                
+                <a href="{{ route('logout') }}" class="nav-link">ログアウト</a>
             </li>
         @else
-            <li class="nav-item list-inline-item">
-                <a href="#" class="nav-link">ログイン</a>
-            </li>
-            <li class="nav-item list-inline-item">
-                <a href="#">新規登録</a>
-            </li>
+        <li class="nav-item list-inline-item">
+            <a href="/login" class="nav-link">ログイン</a>
+        </li>
+        <li class="nav-item list-inline-item">
+            <a href="/signup" class="nav-link">新規登録</a>
+        </li>
         @endif
     </ul>
     <script>

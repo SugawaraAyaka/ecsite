@@ -25,9 +25,9 @@ class CreateUsersTable extends Migration
             $table->string('apartments', 32)->comment('マンション、部屋番号')->nullable();
             $table->string('email', 128)->unique()->comment('メールアドレス');
             $table->bigInteger('phone_number')->comment('電話番号');
-            $table->bigInteger('user_classification_id')->comment('ユーザ種別')->unsigned();
+            $table->bigInteger('user_classification_id')->comment('ユーザ種別')->unsigned()->default(1);
             $table->string('company_name', 128)->comment('会社名')->nullable();
-            $table->char('delete_flag')->length(1)->comment('deleteフラグ');
+            $table->softDeletes()->comment('deleteフラグ');
             $table->timestamp('created_at')->default(\DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(\DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
 

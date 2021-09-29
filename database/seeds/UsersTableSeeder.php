@@ -25,7 +25,6 @@ class UsersTableSeeder extends Seeder
                 'phone_number' => '08012345678' ,
                 'user_classification_id' => 3,
                 'company_name' =>'株式会社山田',
-                'delete_flag' => 0,
             ],
             [
                 'password' => bcrypt('sample2'),
@@ -40,7 +39,6 @@ class UsersTableSeeder extends Seeder
                 'phone_number' => '08090123456',
                 'user_classification_id' => 1,
                 'company_name' => '株式会社鈴木',
-                'delete_flag' => 0,
             ],
             [
                 'password' => bcrypt('sample3'),
@@ -55,7 +53,6 @@ class UsersTableSeeder extends Seeder
                 'phone_number' => '08078901234',
                 'user_classification_id' => 2,
                 'company_name' =>'',
-                'delete_flag' => 0,
             ],
         ]);
     }

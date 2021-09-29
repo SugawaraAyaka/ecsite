@@ -11,6 +11,16 @@ use Illuminate\Support\Facades\Validator;
 
 class UsersController extends Controller
 {
+    public function index()
+    {
+        if (!Auth::user()) {
+            return view('top');
+        }
+
+        return back();
+    }
+
+
     public function edit($id)
     {
         $user = User::findOrFail($id);
