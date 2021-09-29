@@ -49,7 +49,7 @@ class OrdersController extends Controller
         $orderDetail->shipment_status_id = 1;
         $orderDetail->order_detail_number = OrderDetail::max('order_detail_number') + 1;
         $orderDetail->order_quantity = $request->input('quantity');
-        $orderDetail->shipment_date = 20210903;
+        $orderDetail->shipment_date = $carbon->addDay(3);
         $orderDetail->save();
         return view('shopping.completed', ['orderDetail' => $orderDetail]);
     }
