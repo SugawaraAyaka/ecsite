@@ -29,7 +29,7 @@ class UserRequest extends FormRequest
         return [
             'last_name'    => 'required|max:10',
             'first_name'   => 'required|max:10',
-            'email'        => 'required|email',
+            'email'        => 'required|email|unique:users',
             'zipcode'      => 'required|integer|digits:7',
             'prefecture'   => 'required|max:5',
             'municipality' => 'required|max:10',
