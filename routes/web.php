@@ -48,3 +48,7 @@ Route::prefix('users')->name('users.')->group(function (){
     Route::put('/{id}/update', 'UsersController@update')->name('update');
     Route::delete('/{id}/delete', 'UsersController@delete')->name('delete');
 });
+Route::prefix('orders')->group(function (){
+    Route::get('/', 'OrdersController@index')->name('order_history');
+    Route::get('/{id}','OrdersController@detail')->name('order_history_detail');
+});
