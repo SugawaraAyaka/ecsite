@@ -56,7 +56,7 @@ class RegisterController extends Controller
             'prefecture'    => 'required|max:5',
             'municipality'  => 'required|max:10',
             'address'       => 'required|max:15',
-            'apartments'    => 'max:10',
+            'apartments'    => 'max:20',
             'phone_number'  => 'required|digits_between:10,11',
             'password'      => 'required|string|between:6,15|confirmed',
         ]);

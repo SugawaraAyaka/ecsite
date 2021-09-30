@@ -19,8 +19,6 @@ class UsersController extends Controller
 
         return back();
     }
-
-
     public function edit($id)
     {
         $user = User::findOrFail($id);
