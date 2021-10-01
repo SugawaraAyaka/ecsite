@@ -29,20 +29,12 @@ Route::group(['middleware' => 'auth'], function () {
     return view('shopping.completed');
     Route::get('/completed', function () {
     });
-    // Route::middleware('auth')->group(function () {
-    //     Route::get('/orders', 'OrdersController@index')->name('order_history');
-    //  });
     Route::get('/orders', 'OrdersController@index')->name('order_history');
-    // Route::get('/orders/id', function () {
-    //     return view('shopping.order_history_detail');
-    // });
-
     Route::prefix('orders')->group(function (){
         Route::get('/', 'OrdersController@index')->name('order_history');
         Route::get('/{id}','OrdersController@detail')->name('order_history_detail');
     });
 });
-
 Route::prefix('users')->name('users.')->group(function (){
     Route::get('/{id}/edit', 'UsersController@edit')->name('edit');
     Route::put('/{id}/update', 'UsersController@update')->name('update');

@@ -22,10 +22,10 @@
             </li>
         @else
         <li class="nav-item list-inline-item">
-            <a href="/login" class="nav-link">ログイン</a>
+            <a href="{{ route('login') }}" class="nav-link">ログイン</a>
         </li>
         <li class="nav-item list-inline-item">
-            <a href="/signup" class="nav-link">新規登録</a>
+            <a href="{{ route('signup') }}" class="nav-link">新規登録</a>
         </li>
         @endif
     </ul>
