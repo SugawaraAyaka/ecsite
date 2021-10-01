@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Order;
 use App\OrderDetail;
+use App\Product;
 use App\User;
 use Carbon\Carbon;
 
@@ -30,6 +31,27 @@ class OrdersController extends Controller
         ->orderBy('updated_at', 'desc')
         ->paginate(15);
         return view('shopping.order_history', ['orders' => $orders]);
+    }
+
+    public function store(Request $request)
+    {
+        $carbon = new Carbon();
+        $now = $carbon->now();
+        $order = new Order;
+        // TODO: ユーザ認証の機能が完成後に、user_idを埋め込み可能
+        $order->user_id = 1;
+        $order->order_date = $now;
+        $order->save();
+
+        $orderDetail = new OrderDetail;
+        $orderDetail->products_id = $request->id;
+        $orderDetail->order_id = $order->id;
+        $orderDetail->shipment_status_id = 1;
+        $orderDetail->order_detail_number = OrderDetail::max('order_detail_number') + 1;
+        $orderDetail->order_quantity = $request->input('quantity');
+        $orderDetail->shipment_date = $carbon->addDay(3);
+        $orderDetail->save();
+        return view('shopping.completed', ['orderDetail' => $orderDetail]);
     }
 
     public function detail($id)

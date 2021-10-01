@@ -31,14 +31,14 @@
 
 
     <div class="row mt-5 justify-content-center">
-        <form action="#" method="post">
+        <form action="{{ route('order_completed', $product->id) }}" method="post">
         @csrf
             <div class="input-group justify-content-center">
 
                 <h2>購入個数</h2>
-                <input class="form-control col-2" min="1" max="5" type="number" required>
+                <input name="quantity" class="form-control col-2" min="1" max="5" type="number" required>
                 <h2>個</h2>
-                <button type="submit" class="btn btn-primary ml-4">カートへ</button>
+                <button type="submit" class="btn btn-primary ml-4">注文を確定する</button>
             </div>
         </form>
     </div>
