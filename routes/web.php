@@ -26,8 +26,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/cart', function () {
         return view('info.cart');
     });
-    return view('shopping.completed');
     Route::get('/completed', function () {
+        return view('shopping.completed');
     });
     Route::get('/orders', 'OrdersController@index')->name('order_history');
     Route::prefix('orders')->group(function (){
@@ -43,4 +43,5 @@ Route::prefix('users')->name('users.')->group(function (){
 Route::prefix('orders')->group(function (){
     Route::get('/', 'OrdersController@index')->name('order_history');
     Route::get('/{id}','OrdersController@detail')->name('order_history_detail');
+    Route::post('/completed/{id}', 'OrdersController@store')->name('order_completed');
 });
